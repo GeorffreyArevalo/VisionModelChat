@@ -1,4 +1,4 @@
-package com.chattomato
+package com.georffreyarevalo.dstomato
 
 import android.os.Bundle;
 

@@ -43,6 +43,7 @@ export const  DrawerNavigator = () => {
         headerShown: false,
         drawerType: 'slide',
         drawerActiveBackgroundColor: backgroundItemColorActive,
+        drawerInactiveTintColor: colorSchema === 'dark' ? '#EEE' : '#333',
         drawerItemStyle: {
           borderRadius: 10,
         },

@@ -6,6 +6,7 @@ import { Button, ButtonGroup, Icon, Input, Layout, Spinner, Text } from '@ui-kit
 import { useEffect, useState } from 'react';
 import { Alert, Image, useColorScheme, useWindowDimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import Markdown from 'react-native-markdown-display';
 import { CameraAdapter, ObjImage } from '../../../config/adapters/camera-adapter';
 import { default as theme } from '../../../config/theme/theme.json';
 import { FadeInImage } from '../../components/FadeInImage';
@@ -131,9 +132,18 @@ export const ChatScreen = ({ route }: Props) => {
                             <FadeInImage uri={chat.urlImage} style={{ width: width * 0.75, height: width * 0.75, objectFit: 'cover' }} />
                           )
                         }
-                        <Text>
-                          { chat.content }
-                        </Text>
+                          <Markdown
+                            style={{
+                              body: {
+                                color: chat.role === 'user' ? '#FFF' : colorSchema === 'dark' ? '#EEE' : '#333'
+                              }
+                            }}
+                          >
+                        
+                            { chat.content }
+  
+                        
+                          </Markdown>
                         
                         
                       </Layout>
